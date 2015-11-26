@@ -1,0 +1,861 @@
+@import "normalize.scss/normalize";
+
+$pink: #e5007d;
+
+html * {
+    -webkit-backface-visibility: hidden;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    color: #393939;
+    font-family: "BenchNine", "Arial Narrow", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: #fff;
+}
+
+h3 {
+    font-family: "Great Vibes";
+    margin: 0.5em 0 0.25em;
+}
+
+h2.title {
+    font-family: "BenchNine", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.3em;
+    text-align: center;
+}
+
+img {
+    border: 0;
+    height: auto;
+    vertical-align: bottom;
+}
+
+section {
+    opacity: 0;
+    &.loaded {
+        opacity: 1;
+    }
+}
+
+.skrollable {
+    position: fixed;
+    z-index: 100;
+}
+
+.skrollr-mobile .skrollable {
+    position: absolute;
+}
+
+.skrollable .skrollable {
+    position: absolute;
+}
+
+.skrollable .skrollable .skrollable {
+    position: static;
+}
+
+#browsehappy {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10000;
+    .inner {
+        $size: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $size;
+        height: $size;
+        margin-left: -($size/2);
+        margin-top: -($size/2);
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        color: #999;
+        text-align: center;
+        color: #000;
+        .logo {
+            width: 100%;
+            height: 250px;
+            background-image: url('/images/logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+#loading {
+    $size: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $size;
+    height: $size;
+    margin-left: -($size/2);
+    margin-top: -($size/2);
+    text-transform: uppercase;
+    .inner {
+        margin: 0 auto;
+        text-align: center;
+        .logo {
+            width: 100%;
+        }
+        .wrapper {
+            width: 25%;
+            margin: 5% auto;
+            text-align: center;
+            .loading span {
+                display: inline-block;
+                padding: 4px;
+                border-radius: 50%;
+                &.ball1 {
+                    background: $pink;
+                    animation: move-left 800ms ease-in-out infinite alternate;
+                }
+                &.ball2 {
+                    background: $pink;
+                    animation: move-right 800ms ease-in-out infinite alternate;
+                }
+            }
+        }
+    }
+}
+
+#intro {
+    -skrollr-animation-name: intro;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    .overlay {
+        -skrollr-animation-name: introOverlay;
+        width: 100%;
+        height: 100%;
+        background: rgba($pink, .1) url('/images/panorama_overlay.png') repeat;
+    }
+    .picture {
+        -skrollr-animation-name: introPicture;
+        width: 100%;
+        height: 100%;
+        background: url('/images/home.jpg') center no-repeat;
+        background-size: cover;
+    }
+    .wrapper {
+        -skrollr-animation-name: introWrapper;
+        width: 100%;
+        height: 100%;
+        h1 {
+            $savethedate: 400px;
+            display: block;
+            width: 100%;
+            height: $savethedate;
+            margin-top: -($savethedate/2);
+            background-image: url('/images/savethedate.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(#000, .3);
+            background-size: $savethedate;
+            text-indent: -9999px;
+        }
+        #scrolldown {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            opacity: .8;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+.csstransitions #intro {
+    transition: opacity 0.5s ease;
+}
+
+#wedding {
+    -skrollr-animation-name: wedding;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    .cupidon {
+        -skrollr-animation-name: weddingCupidon;
+        width: 100%;
+        height: 100%;
+        background: url('/images/cupidon.png') bottom right no-repeat;
+        opacity: 0.1;
+        background-size: 200px 112px;
+    }
+    .picture {
+        -skrollr-animation-name: weddingPicture;
+        width: 85%;
+        height: 100%;
+        background: url('/images/wedding.png') bottom right no-repeat;
+        background-size: contain;
+    }
+    .bubbles {
+        width: 1000%;
+        height: 1000%;
+        background-repeat: repeat;
+        opacity: .2;
+    }
+    .bubbles.front {
+        -skrollr-animation-name: weddingBubblesFront;
+        background-image: url('/images/bubbles1.png');
+    }
+    .bubbles.back {
+        -skrollr-animation-name: weddingBubblesBack;
+        background-image: url('/images/bubbles2.png');
+    }
+    .text {
+        -skrollr-animation-name: weddingText;
+        width: 50%;
+        right: 35%;
+        padding: 1em 2em 1em 0;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 3px;
+        h3 {
+            font-size: 3em;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+            line-height: 1;
+            text-align: center;
+        }
+        p {
+            line-height: 1.1;
+            margin: 0.4em 0;
+            &.heading {
+                text-align: center;
+                line-height: .95;
+            }
+        }
+        strong {
+            font-weight: 700;
+            font-size: 1.6em;
+        }
+        .highlight {
+            color: $pink;
+        }
+        span.small {
+            font-size: .6em;
+        }
+    }
+}
+
+#whenandwhere {
+    -skrollr-animation-name: whenandwhere;
+    z-index: 30;
+    width: 100%;
+    height: 240%;
+    $bgHeight: 400px;
+    background-color: #fff;
+    .footer {
+        -skrollr-animation-name: whenandwhereFooter;
+        width: 100%;
+        height: 100%;
+        background: url('/images/footer.jpg') no-repeat;
+        background-size: contain;
+        background-position: bottom -150px center;
+        opacity: .5;
+    }
+    .bg {
+        -skrollr-animation-name: whenandwhereBg;
+        width: 100%;
+        height: $bgHeight;
+        overflow: hidden;
+        img {
+            -skrollr-animation-name: whenandwhereBgImg;
+        }
+    }
+    .overlay {
+        -skrollr-animation-name: whenandwhereOverlay;
+        width: 100%;
+        height: $bgHeight;
+        background: rgba($pink, .1) url('/images/panorama_overlay.png') repeat;
+        box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.6), inset 0 -10px 10px -10px rgba(0, 0, 0, 0.6);
+    }
+    .wrapper {
+        -skrollr-animation-name: whenandwhereWrapper;
+        top: $bgHeight;
+        width: 100%;
+        height: 100%;
+        background: url('/images/decor_small.png') center 200px no-repeat;
+        h2 {
+            position: absolute;
+            left: 50%;
+            top: -99px;
+            margin-left: -100px;
+            margin-top: 0;
+            width: 200px;
+            line-height: 130px;
+            height: 100px;
+            border-radius: 100px 100px 0 0;
+            background: #fff;
+            box-shadow: 0 -5px 4px rgba(0, 0, 0, 0.15);
+        }
+        .inner {
+            padding: 3em 0 0;
+            position: relative;
+            max-width: 1024px;
+            margin: 0 auto;
+            text-align: center;
+            h3 {
+                font-size: 2em;
+            }
+            a {
+                color: $pink;
+            }
+            .text {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 1em;
+                text-align: left;
+                p {
+                    line-height: 1.1;
+                    margin: 0.4em 0;
+                    .highlight {
+                        color: $pink;
+                    }
+                    strong {
+                        font-weight: 700;
+                        font-size: 1.1em;
+                        &.lettrine {
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+            }
+            address {
+                margin-top: 40px;
+                font-style: normal;
+                h4, p {
+                    line-height: 1.1;
+                    margin: 0.4em 0;
+                }
+                h4 {
+                    font-size: 1.2em;
+                    margin: 0;
+                }
+            }
+            .maplink, .infolink {
+                font-size: 1.1em;
+                font-weight: bold;
+                padding: 0 0.5em;
+            }
+            .photo {
+                position: relative;
+                float: left;
+                width: 50%;
+                padding-top: 0;
+                .florent {
+                    position: absolute;
+                    width: 119px;
+                    height: 149px;
+                    top: -93px;
+                    left: 270px;
+                    background: url('/images/florent_guitar.png') no-repeat;
+                }
+                .marina {
+                    position: absolute;
+                    width: 119px;
+                    height: 149px;
+                    top: -85px;
+                    left: 145px;
+                    background: url('/images/marina_love.png') no-repeat;
+                }
+            }
+            .pile {
+                position: relative;
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 3em;
+                padding: 8px;
+                background: #fff;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                &:before {
+                    content: "";
+                    position: absolute;
+                    padding: 2px;
+                    left: -2px;
+                    top: -1px;
+                    background: #fff;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    transform: rotate(3deg);
+                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}
+
+#rsvp {
+    -skrollr-animation-name: rsvp;
+    z-index: 40;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    background-image: url('/images/dotted-trans.png');
+    background-color: tint($pink, 50);
+    border-top: 10px solid tint($pink, 50);
+    box-shadow: inset 0 10px 6px -9px #cc6ca8;
+    text-align: center;
+    h2.title {
+        -skrollr-animation-name: rsvpTitle;
+        background-color: inherit;
+        left: 50%;
+        top: -99px;
+        margin-left: -100px;
+        margin-top: 0;
+        width: 200px;
+        line-height: 130px;
+        height: 100px;
+        border-radius: 100px 100px 0 0;
+        color: #fff;
+        box-shadow: 0 -3px 2px rgba(0, 0, 0, 0.1);
+    }
+    .wrapper {
+        -skrollr-animation-name: rsvpWrapper;
+        width: 100%;
+    }
+    a {
+        color: white;
+    }
+    p {
+        margin: 0 auto;
+    }
+    h3, .note {
+        color: shade($pink, 50);
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+        font-size: 2em;
+    }
+    h4 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.2em;
+        margin: 0.2em 0;
+    }
+    .note {
+        padding: 1em 1em 0.25em 1em;
+        display: inline-block;
+    }
+    form {
+        padding: 0 0 1em 0;
+        overflow: hidden;
+        max-width: 800px;
+        margin: 0 auto;
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+        input[type="text"], input[type="email"], input[type="number"], textarea {
+            font-family: sans-serif;
+            width: 100%;
+            padding: 11px 1em;
+            border: 0;
+            font-size: 14px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            color: #393939;
+            margin-bottom: 10px;
+            &:focus {
+                outline: none;
+                background: #fff;
+            }
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        textarea {
+            height: 80px;
+            width: 98%;
+        }
+        button[type='submit'] {
+            position: relative;
+            overflow: hidden;
+            padding: 6px 1em 4px;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.25em;
+            border: none;
+            border-radius: 6px;
+            background-color: shade($pink, 50);
+            outline: none;
+            transition: all 0.3s;
+            &[disabled] {
+                cursor: default;
+                opacity: .65;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                transition: all 0.3s;
+                box-sizing: border-box;
+            }
+            &.success, &.error {
+                color: transparent;
+                &:after {
+                    z-index: 1;
+                    color: #fff;
+                    left: 20%;
+                }
+            }
+            &.success:after {
+                content: "Merci !";
+                animation: moveUp 0.5s;
+            }
+            &.error {
+                animation: shake 0.5s;
+                &:after {
+                    content: "Erreur !";
+                    animation: scaleFromUp 0.5s;
+                }
+            }
+        }
+        button[type='submit']:hover {
+            background: $pink;
+        }
+        input[type=checkbox] {
+            visibility: hidden;
+        }
+        .checkbox {
+            position: relative;
+            font-size: 1.2em;
+            text-align: center;
+            label {
+                position: relative;
+                padding-left: 25px;
+                height: 20px;
+                display: inline-block;
+                line-height: 20px;
+                &:before {
+                    content: "";
+                    cursor: pointer;
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 0px;
+                    left: 0;
+                    border-radius: 5px;
+                    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+                    background-color: shade($pink, 50);
+                }
+                &:after {
+                    opacity: 0;
+                    content: '';
+                    position: absolute;
+                    width: 9px;
+                    height: 5px;
+                    background: transparent;
+                    top: 4px;
+                    left: 4px;
+                    border: 3px solid #fcfff4;
+                    border-top: none;
+                    border-right: none;
+                    transform: rotate(-45deg);
+                }
+                &:hover::after {
+                    opacity: 0.3;
+                }
+            }
+        }
+        .checkbox input[type=checkbox]:checked + label:after {
+            opacity: 1;
+        }
+        input[type="text"], input[type="email"], input[type="number"], .checkbox {
+            float: left;
+            width: 48%;
+            margin: 0 1% 10px;
+        }
+    }
+    .contact-details {
+        float: left;
+        width: 50%;
+        &.contact-details-1 {
+            text-align: right;
+            padding: 0 1em 0 0;
+            border-right: 1px solid shade($pink, 50);
+        }
+        &.contact-details-2 {
+            text-align: left;
+            padding: 0 0 0 1em;
+            border-left: 1px solid shade($pink, 50);
+        }
+    }
+}
+
+@-skrollr-keyframes intro {
+    start {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes introPicture {
+    start {
+        opacity: 1;
+        transform: scale3d(2,2,2);
+    }
+    _step1 {
+        opacity: 1;
+        transform: scale3d(1,1,1);
+    }
+    _step2 {
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes introOverlay {
+    start {
+        opacity: 1;
+    }
+    _step1 {
+        opacity: 1;
+    }
+    _step2 {
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes introWrapper {
+    start {
+        transform: translate3d(0%,50%,0);
+        opacity: 1;
+    }
+    _step1 {
+        transform: translate3d(0%,50%,0);
+        opacity: 1;
+    }
+    _step2 {
+        transform: translate3d(0%,-50%,0);
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes wedding {
+    start {
+        opacity: 0;
+    }
+    _step1 {
+        opacity: 0;
+    }
+    _step2 {
+        opacity: 1;
+    }
+    _step3 {
+        opacity: 1;
+    }
+    _step4 {
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes weddingBubblesBack {
+    start {
+        transform: translate3d(10%,50%,0);
+    }
+    end {
+        transform: translate3d(-10%,-50%,0);
+    }
+}
+
+@-skrollr-keyframes weddingBubblesFront {
+    start {
+        transform: translate3d(10%,50%,0);
+    }
+    end {
+        transform: translate3d(-10%,-100%,0);
+    }
+}
+
+@-skrollr-keyframes weddingCupidon {
+    start {
+        transform: translate3d(50%,30%,0);
+    }
+    _step2 {
+        transform: translate3d(50%,30%,0);
+    }
+    _step3 {
+        transform: translate3d(-100%,-100%,0);
+    }
+}
+
+@-skrollr-keyframes weddingPicture {
+    start {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes weddingText {
+    start {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes whenandwhere {
+    start {
+        transform: translate3d(0%,50%,0);
+    }
+    _step3 {
+        transform: translate3d(0%,50%,0);
+    }
+    _step4 {
+        transform: translate3d(0%,-50%,0);
+    }
+    _step5 {
+        transform: translate3d(0%,-100%,0);
+    }
+}
+
+@-skrollr-keyframes whenandwhereFooter {
+    start {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes whenandwhereBg {
+    start {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes whenandwhereBgImg {
+    start {
+        transform: translate3d(1%,1%,0);
+    }
+    _step3 {
+        transform: translate3d(1%,1%,0);
+    }
+    _step4 {
+        transform: translate3d(-20%,-40%,0);
+    }
+}
+
+@-skrollr-keyframes whenandwhereOverlay {
+    start {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes whenandwhereWrapper {
+    start {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes rsvp {
+    start {
+        transform: translate3d(0%,100%,0);
+    }
+    _step4 {
+        transform: translate3d(0%,100%,0);
+    }
+    _step5 {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@-skrollr-keyframes rsvpTitle {
+    start {
+        opacity: 0;
+    }
+    _step4 {
+        opacity: 0;
+    }
+    _step5 {
+        opacity: 1;
+    }
+}
+
+@-skrollr-keyframes rsvpWrapper {
+    start {
+        transform: translate3d(0%,20%,0);
+    }
+    _step4 {
+        transform: translate3d(0%,20%,0);
+    }
+    _step5 {
+        transform: translate3d(0%,0%,0);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleFromUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+@mixin ball($translate: 0px, $color: #000) {
+    from { }
+    to {
+        transform: translate($translate, 0);
+        background: $color;
+    }
+}
+@keyframes move-left {
+    @include ball(-20px, tint($pink, 80%));
+}
+@keyframes move-right {
+    @include ball(20px, tint($pink, 80%));
+}
+
+// Smartphones (portrait and landscape)
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    body { height: 100%; }
+    section { display: none; }
+    #intro {
+        position: fixed;
+        display: block;
+        #scrolldown { display: none; }
+        .wrapper {
+            top: 50%;
+            position: absolute;
+            h1 {
+                $savethedate: 250px;
+                height: $savethedate;
+                margin-top: -($savethedate/2);
+                background-size: $savethedate;
+            }
+        }
+    }
+}

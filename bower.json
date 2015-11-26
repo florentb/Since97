@@ -1,0 +1,11 @@
+{
+  "name": "since97",
+  "private": true,
+  "dependencies": {
+    "normalize.scss": "~2.2.x",
+    "modernizr": "~2.6.x",
+    "skrollr": "~0.6.x",
+    "skrollr-stylesheets": "~0.0.x"
+  },
+  "devDependencies": {}
+}

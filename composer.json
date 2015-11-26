@@ -1,0 +1,5 @@
+{
+	"require": {
+		"campaignmonitor/createsend-php": "3.1.*"
+	}
+}
