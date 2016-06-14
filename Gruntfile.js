@@ -213,7 +213,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     report: 'gzip',
-                    noAdvanced: true
+                    advanced: false
                 },
                 files: {
                     '<%= since97.dist %>/styles/main.css': [
