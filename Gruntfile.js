@@ -233,7 +233,7 @@ module.exports = function (grunt) {
                     cwd: '<%= since97.app %>',
                     dest: '<%= since97.dist %>',
                     src: [
-                        '*.{ico,png,txt,pdf}',
+                        '*.{ico,png,jpg,txt,pdf}',
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
