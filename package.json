@@ -14,7 +14,7 @@
     "start": "grunt serve",
     "postinstall": "bower install",
     "postupdate": "bower update",
-    "deploy": "grunt build && gh-pages -d dist"
+    "deploy": "grunt build && gh-pages -d dist --remove '!CNAME'"
   },
   "dependencies": {},
   "devDependencies": {
