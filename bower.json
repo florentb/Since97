@@ -4,8 +4,7 @@
   "dependencies": {
     "skrollr": "~0.6.x",
     "skrollr-stylesheets": "~0.0.x",
-    "normalize-scss": "normalize.scss#^5.0.3",
-    "modernizr": "2.8.3"
+    "normalize-scss": "normalize.scss#^5.0.3"
   },
   "devDependencies": {}
 }
