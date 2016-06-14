@@ -2,10 +2,10 @@
   "name": "since97",
   "private": true,
   "dependencies": {
-    "normalize.scss": "~2.2.x",
-    "modernizr": "~2.6.x",
     "skrollr": "~0.6.x",
-    "skrollr-stylesheets": "~0.0.x"
+    "skrollr-stylesheets": "~0.0.x",
+    "normalize-scss": "normalize.scss#^5.0.3",
+    "modernizr": "2.8.3"
   },
   "devDependencies": {}
 }
