@@ -149,22 +149,8 @@ module.exports = function (grunt) {
             }
         },
 
-        // Renames files for browser caching purposes
-        rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= since97.dist %>/scripts/{,*/}*.js',
-                        '<%= since97.dist %>/styles/{,*/}*.css',
-                        '<%= since97.dist %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
-                        '<%= since97.dist %>/styles/fonts/{,*/}*.*'
-                    ]
-                }
-            }
-        },
-
         // Reads HTML for usemin blocks to enable smart builds that automatically
-        // concat, minify and revision files. Creates configurations in memory so
+        // concat and minify files. Creates configurations in memory so
         // additional tasks can operate on them
         useminPrepare: {
             options: {
@@ -173,7 +159,7 @@ module.exports = function (grunt) {
             html: '<%= since97.app %>/index.html'
         },
 
-        // Performs rewrites based on rev and the useminPrepare configuration
+        // Performs rewrites based on the useminPrepare configuration
         usemin: {
             options: {
                 assetsDirs: ['<%= since97.dist %>']
@@ -303,7 +289,6 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'rev',
         'usemin',
         'htmlmin'
     ]);
