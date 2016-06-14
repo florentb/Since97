@@ -86,7 +86,7 @@ section {
         .logo {
             width: 100%;
             height: 250px;
-            background-image: url('/images/logo.png');
+            background-image: url('../images/logo.png');
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -139,13 +139,13 @@ section {
         -skrollr-animation-name: introOverlay;
         width: 100%;
         height: 100%;
-        background: rgba($pink, .1) url('/images/panorama_overlay.png') repeat;
+        background: rgba($pink, .1) url('../images/panorama_overlay.png') repeat;
     }
     .picture {
         -skrollr-animation-name: introPicture;
         width: 100%;
         height: 100%;
-        background: url('/images/home.jpg') center no-repeat;
+        background: url('../images/home.jpg') center no-repeat;
         background-size: cover;
     }
     .wrapper {
@@ -158,7 +158,7 @@ section {
             width: 100%;
             height: $savethedate;
             margin-top: -($savethedate/2);
-            background-image: url('/images/savethedate.png');
+            background-image: url('../images/savethedate.png');
             background-position: center;
             background-repeat: no-repeat;
             background-color: rgba(#000, .3);
@@ -185,13 +185,13 @@ section {
     z-index: 20;
     width: 100%;
     height: 100%;
-    background: #fff url('/images/wedding.png') bottom right no-repeat;
+    background: #fff url('../images/wedding.png') bottom right no-repeat;
     background-size: contain;
     .cupidon {
         -skrollr-animation-name: weddingCupidon;
         width: 100%;
         height: 100%;
-        background: url('/images/cupidon.png') bottom right no-repeat;
+        background: url('../images/cupidon.png') bottom right no-repeat;
         opacity: 0.1;
         background-size: 200px 112px;
     }
@@ -203,11 +203,11 @@ section {
     }
     .bubbles.front {
         -skrollr-animation-name: weddingBubblesFront;
-        background-image: url('/images/bubbles1.png');
+        background-image: url('../images/bubbles1.png');
     }
     .bubbles.back {
         -skrollr-animation-name: weddingBubblesBack;
-        background-image: url('/images/bubbles2.png');
+        background-image: url('../images/bubbles2.png');
     }
     .wrapper {
         width: 100%;
@@ -258,7 +258,7 @@ section {
         -skrollr-animation-name: whenandwhereFooter;
         width: 100%;
         height: 100%;
-        background: url('/images/footer.jpg') no-repeat;
+        background: url('../images/footer.jpg') no-repeat;
         background-size: contain;
         background-position: bottom center;
         opacity: .5;
@@ -278,7 +278,7 @@ section {
         -skrollr-animation-name: whenandwhereOverlay;
         width: 100%;
         height: $bgHeight;
-        background: rgba($pink, .1) url('/images/panorama_overlay.png') repeat;
+        background: rgba($pink, .1) url('../images/panorama_overlay.png') repeat;
         box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.6), inset 0 -10px 10px -10px rgba(0, 0, 0, 0.6);
     }
     .wrapper {
@@ -286,7 +286,7 @@ section {
         top: $bgHeight;
         width: 100%;
         height: 100%;
-        background: url('/images/decor_small.png') center 200px no-repeat;
+        background: url('../images/decor_small.png') center 200px no-repeat;
         h2 {
             position: absolute;
             left: 50%;
@@ -360,7 +360,7 @@ section {
                     height: 149px;
                     top: -93px;
                     left: 270px;
-                    background: url('/images/florent_guitar.png') no-repeat;
+                    background: url('../images/florent_guitar.png') no-repeat;
                 }
                 .marina {
                     position: absolute;
@@ -368,7 +368,7 @@ section {
                     height: 149px;
                     top: -85px;
                     left: 145px;
-                    background: url('/images/marina_love.png') no-repeat;
+                    background: url('../images/marina_love.png') no-repeat;
                 }
             }
             .pile {
