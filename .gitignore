@@ -3,8 +3,3 @@ dist
 .tmp
 .sass-cache
 app/bower_components
-*.sublime-workspace
-
-/composer.lock
-
-/env.php
