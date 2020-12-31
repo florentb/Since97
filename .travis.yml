@@ -16,6 +16,7 @@ deploy:
   github-token: $GITHUB_TOKEN
   keep-history: true
   local-dir: dist
+  fqdn: www.since97.com
   on:
     branch: master
     node: 'lts/*'
