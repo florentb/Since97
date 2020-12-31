@@ -12,6 +12,7 @@ script:
   - npm run build
 deploy:
   provider: pages
+  edge: true
   cleanup: false
   github-token: $GITHUB_TOKEN
   keep-history: true
