@@ -11,9 +11,9 @@ script:
   - npm run lint:js
   - npm run build
 deploy:
-  provider: pages:git
-  edge: true
-  token: $GITHUB_TOKEN
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
   keep_history: true
   local_dir: dist
   fqdn: www.since97.com
