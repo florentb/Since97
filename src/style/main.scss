@@ -15,7 +15,7 @@ html {
   margin: 0;
   overflow-x: hidden;
   color: #393939;
-  font-family: 'BenchNine', 'Arial Narrow', sans-serif;
+  font-family: BenchNine, 'Arial Narrow', sans-serif;
   font-weight: 400;
   font-size: 20px;
   background-color: #fff;
@@ -27,7 +27,7 @@ h3 {
 }
 
 h2 {
-  font-family: 'BenchNine', 'Arial Narrow', sans-serif;
+  font-family: BenchNine, 'Arial Narrow', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 2.3em;
@@ -65,37 +65,6 @@ section {
   position: static;
 }
 
-#browsehappy {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  z-index: 10000;
-
-  .inner {
-    $size: 400px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: $size;
-    height: $size;
-    margin-left: -($size/2);
-    margin-top: -($size/2);
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    text-align: center;
-    color: #000;
-  }
-
-  .logo {
-    width: 100%;
-    height: 250px;
-    background-image: url('../static/logo.png');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
 
 #loading {
   $size: 400px;
@@ -105,8 +74,8 @@ section {
   left: 50%;
   width: $size;
   height: $size;
-  margin-left: -($size/2);
-  margin-top: -($size/2);
+  margin-left: calc($size / -2);
+  margin-top: calc($size / -2);
   text-transform: uppercase;
 
   .inner {
@@ -170,11 +139,11 @@ section {
       display: block;
       width: 100%;
       height: $savethedate;
-      margin-top: -($savethedate/2);
+      margin-top: calc($savethedate / -2);
       background-image: url('../static/savethedate.png');
       background-position: center;
       background-repeat: no-repeat;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgb(0 0 0 / 30%);
       background-size: $savethedate;
       text-indent: -9999px;
     }
@@ -201,7 +170,7 @@ section {
 
   h3 {
     font-size: 3em;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
     line-height: 1;
     text-align: center;
   }
@@ -254,7 +223,7 @@ section {
     height: 100%;
     margin: 0 auto;
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255 255 255 / 0%);
   }
 
   .heading p {
@@ -325,7 +294,7 @@ section {
     width: 100%;
     height: $bg-height;
     background: rgba($pink, 0.1) url('../static/panorama_overlay.png') repeat;
-    box-shadow: inset 0 10px 20px -10px rgba(0, 0, 0, 0.6), inset 0 -10px 10px -10px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 10px 20px -10px rgb(0 0 0 / 60%), inset 0 -10px 10px -10px rgb(0 0 0 / 60%);
   }
 
   .wrapper {
@@ -346,7 +315,7 @@ section {
     height: 100px;
     border-radius: 100px 100px 0 0;
     background: #fff;
-    box-shadow: 0 -5px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -5px 4px rgb(0 0 0 / 15%);
   }
 
   .inner {
@@ -419,7 +388,7 @@ section {
     margin-bottom: 3em;
     padding: 8px;
     background: #fff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px rgb(0 0 0 / 20%);
 
     &::before {
       content: '';
@@ -432,34 +401,11 @@ section {
       height: 100%;
       z-index: -1;
       transform: rotate(3deg);
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 4px rgb(0 0 0 / 20%);
     }
   }
 }
 
-@keyframes moveUp {
-  0% {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleFromUp {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 @keyframes shake {
   0%,
@@ -491,15 +437,15 @@ section {
 }
 
 @keyframes move-left {
-  @include ball(-20px, tint($pink, 80%));
+  @include ball(-20px, color-mix(in srgb, $pink 20%, white));
 }
 
 @keyframes move-right {
-  @include ball(20px, tint($pink, 80%));
+  @include ball(20px, color-mix(in srgb, $pink 20%, white));
 }
 
-// Smartphones (portrait and landscape)
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+/* Smartphones (portrait and landscape) */
+@media only screen and (device-width >= 320px) and (device-width <= 480px) {
   body {
     height: 100%;
   }
@@ -520,7 +466,7 @@ section {
         $savethedate: 250px;
 
         height: $savethedate;
-        margin-top: -($savethedate/2);
+        margin-top: calc($savethedate / -2);
         background-size: $savethedate;
       }
     }

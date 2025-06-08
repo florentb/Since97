@@ -2,6 +2,7 @@
   "name": "since97",
   "version": "1.1.0",
   "description": "Marina & Florent wedding website",
+  "homepage": "https://florentb.github.io/Since97",
   "repository": {
     "type": "git",
     "url": "https://github.com/florentb/Since97.git"
@@ -9,45 +10,27 @@
   "author": "Florent Bourgeois",
   "license": "ISC",
   "scripts": {
-    "build": "webpack --config webpack.config.prod.js",
-    "lint:js": "./node_modules/.bin/eslint src/js/*.js",
+    "dev": "parcel src/index.html --dist-dir dist",
+    "build": "parcel build src/index.html --dist-dir dist",
+    "lint:js": "eslint src/js/*.js",
     "lint:styles": "stylelint \"src/**/*.scss\"",
-    "start:dev": "webpack serve --config webpack.config.dev.js",
-    "start": "webpack --config webpack.config.prod.js && http-server ./dist -o"
+    "preview": "parcel build src/index.html --dist-dir dist && npx serve dist"
   },
   "dependencies": {
     "normalize-scss": "^7.0.1",
-    "skrollr": "^0.6.26",
-    "skrollr-stylesheets": "^1.0.0"
+    "skrollr": "^0.6.26"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "autoprefixer": "^10.1.0",
-    "babel-loader": "^8.2.2",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^7.0.0",
-    "css-loader": "^5.0.1",
-    "css-minimizer-webpack-plugin": "^1.1.5",
-    "eslint": "^7.16.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
+    "@parcel/transformer-sass": "^2.15.2",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "glob": "^7.1.6",
-    "html-webpack-plugin": "^5.0.0-beta.1",
-    "http-server": "^0.12.3",
-    "mini-css-extract-plugin": "^1.3.3",
-    "node-sass": "^5.0.0",
-    "postcss-loader": "^4.1.0",
-    "sass-loader": "^10.1.0",
-    "style-loader": "^2.0.0",
-    "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^20.0.0",
-    "webpack": "^5.9.0",
-    "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.7.3"
+    "eslint-plugin-promise": "^6.2.0",
+    "parcel": "^2.12.0",
+    "sass": "^1.77.0",
+    "serve": "^14.2.0",
+    "stylelint": "^16.6.0",
+    "stylelint-config-standard-scss": "^13.1.0"
   }
 }
