@@ -11,7 +11,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "parcel src/index.html --dist-dir dist",
-    "build": "parcel build src/index.html --dist-dir dist",
+    "build": "parcel build src/index.html --dist-dir dist --public-url ./",
     "lint:js": "eslint src/js/*.js",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "preview": "parcel build src/index.html --dist-dir dist && npx serve dist"
